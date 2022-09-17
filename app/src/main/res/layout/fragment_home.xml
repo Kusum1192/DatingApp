@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#EBEBEC"
+    >
+
+    <RelativeLayout
+        android:id="@+id/button_container"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:clipChildren="false"
+        android:visibility="visible"
+        android:orientation="horizontal">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/skip_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/rewind_data"
+            android:contentDescription="@string/skip_button"
+            android:padding="15dp"
+            android:src="@drawable/ic_custom_close"
+            android:visibility="visible"
+            app:backgroundTint="@android:color/white"
+            app:fabSize="auto"
+            app:rippleColor="#22ED7563"
+            tools:ignore="RelativeOverlap" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/rewind_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:contentDescription="@string/reload_button"
+            android:src="@drawable/ic_baseline_autorenew_24"
+            android:visibility="visible"
+            app:backgroundTint="@android:color/white"
+            app:fabSize="mini"
+            app:rippleColor="#225BC9FA"
+            app:tint="#B5485D"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/like_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/rewind_data"
+            android:contentDescription="@string/string_like_button"
+            android:src="@drawable/ic_baseline_like"
+            app:backgroundTint="@color/white"
+            app:fabSize="auto"
+            app:rippleColor="#22ED7563"
+            app:tint="#FF3428" />
+
+    </RelativeLayout>
+
+    <com.yuyakaido.android.cardstackview.CardStackView
+        android:id="@+id/card_stack_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/button_container"
+        android:clipToPadding="false" />
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/spin_kit"
+            style="@style/SpinKitView.Large.ThreeBounce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            app:SpinKit_Color="@color/mixed" />
+
+    <include
+        android:id="@+id/supportLayout"
+        layout="@layout/warning_error_layout"
+        android:visibility="gone"
+        />
+    </RelativeLayout>

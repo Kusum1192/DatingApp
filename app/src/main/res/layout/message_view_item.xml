@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/senderpic"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ic_placeholder" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/senderpic"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.honeybunch.app.utils.CustomTextView
+                android:id="@+id/sendername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="username"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:font_name="HNBold" />
+
+            <ImageView
+                android:id="@+id/im_active"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/sendername"
+                android:adjustViewBounds="true"
+                android:padding="5dp"
+                android:src="@drawable/active_status"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/im_inactive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/sendername"
+                android:padding="5dp"
+                android:src="@drawable/inactive_status"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.honeybunch.app.utils.CustomTextView
+                android:id="@+id/sendermessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:text="message"
+                app:font_name="HNLight" />
+
+            <ImageView
+                android:id="@+id/im_inactive_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:adjustViewBounds="true"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:src="@drawable/inactive_msg"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

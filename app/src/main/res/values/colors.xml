@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#121212</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="unselect_color">#E5758B</color>
+<!--    <color name="select_color">#5b3ef2</color>-->
+    <color name="select_color">#B5485D</color>
+    <color name="un_select_color">#E5758B</color>
+    <color name="grey">#747272</color>
+    <color name="edit_bg_color">#f4f5fa</color>
+    <color name="view_bg">#e5e4ea</color>
+    <color name="light_black">#222D36</color>
+    <color name="colorOfStatusBar">#101d24</color>
+    <color name="backgroundColor">#ffffff</color>
+    <color name="custom_theme_color">#B5485D</color>
+    <color name="transparent">#00000000</color>
+    <color name="mixed">#F7879A</color>
+    <color name="light_gray">#8FD6D3D3</color>
+    <color name="darkGray">#202020</color>
+    <color name="color_e53f28">#e53f28</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="lighted_gray">#f7f7f7</color>
+    <color name="light_custon_gray">#8C8C8C</color>
+
+</resources>

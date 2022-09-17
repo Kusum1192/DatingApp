@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_marginBottom="55dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#EBEBEC"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/user_profile"
+                    android:layout_width="150dp"
+                    android:layout_height="110dp"
+                    android:src="@drawable/ic_baseline_account_circle_24" />
+
+                <ImageView
+                    android:id="@+id/imageView_upload"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="105dp"
+                    android:layout_marginTop="55dp"
+                    android:src="@drawable/ic_camera" />
+
+            </FrameLayout>
+
+
+            <com.honeybunch.app.utils.CustomTextView
+                android:id="@+id/tv_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Anil atri,30"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <com.honeybunch.app.utils.CustomTextView
+                android:id="@+id/tv_view_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_wtout_bg"
+                android:padding="9dp"
+                android:text="View And Edit Profile"
+                android:textAllCaps="true"
+                android:textColor="@color/custom_theme_color"
+                android:textSize="11sp"
+                app:font_name="HNRegular" />
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/spin_kit"
+                style="@style/SpinKitView.Large.ThreeBounce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:SpinKit_Color="@color/mixed" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/top_rounded_corner"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+
+                <LinearLayout
+                    android:id="@+id/ll_getcredit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_border_bg"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight=".3"
+                        android:src="@drawable/ic_rupee" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.4"
+                        android:orientation="vertical">
+
+                        <com.honeybunch.app.utils.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Get Credits!"
+                            android:textColor="@color/white" />
+
+                        <com.honeybunch.app.utils.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Full up your credits and increase to find the perfect partner!"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            app:font_name="HNLight" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".3"
+                        android:src="@drawable/ic_baseline_chevron_right_24" />
+
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:id="@+id/ll_complete_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="6dp">
+
+                    <com.honeybunch.app.utils.CustomTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.6"
+                        android:drawableLeft="@drawable/ic_user_edit"
+                        android:drawablePadding="8dp"
+                        android:drawableTint="@color/custom_theme_color"
+                        android:text="Complete profile"
+                        android:textColor="@color/black"
+                        app:font_name="HNRegular" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".4"
+                        android:src="@drawable/ic_baseline_chevron_right_24"
+                        app:tint="#cecece" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.3dp"
+                    android:background="@color/view_bg" />
+
+                <LinearLayout
+                    android:id="@+id/ll_account"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:padding="6dp">
+
+
+                    <com.honeybunch.app.utils.CustomTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.6"
+                        android:drawableLeft="@drawable/ic_user_account"
+                        android:drawablePadding="8dp"
+                        android:drawableTint="@color/custom_theme_color"
+                        android:text="Account"
+                        android:textColor="@color/black"
+                        app:font_name="HNRegular" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".4"
+                        android:src="@drawable/ic_baseline_chevron_right_24"
+                        app:tint="#cecece" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.3dp"
+                    android:background="@color/view_bg" />
+
+                <LinearLayout
+                    android:id="@+id/ll_privacy_policy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:padding="6dp">
+
+
+                    <com.honeybunch.app.utils.CustomTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.6"
+                        android:drawableLeft="@drawable/ic_baseline_privacy_tip_24"
+                        android:drawablePadding="8dp"
+                        android:drawableTint="@color/custom_theme_color"
+                        android:text="Privacy Policy"
+                        android:textColor="@color/black"
+                        app:font_name="HNRegular" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".4"
+                        android:src="@drawable/ic_baseline_chevron_right_24"
+                        app:tint="#cecece" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.3dp"
+                    android:background="@color/view_bg" />
+
+                <LinearLayout
+                    android:id="@+id/ll_term_services"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:padding="6dp">
+
+                    <com.honeybunch.app.utils.CustomTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.6"
+                        android:drawableLeft="@drawable/ic_baseline_assignment_24"
+                        android:drawablePadding="8dp"
+                        android:drawableTint="@color/custom_theme_color"
+                        android:text="Terms of services"
+                        android:textColor="@color/black"
+                        app:font_name="HNRegular" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".4"
+                        android:src="@drawable/ic_baseline_chevron_right_24"
+                        app:tint="#cecece" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.3dp"
+                    android:background="@color/view_bg" />
+
+                <LinearLayout
+                    android:id="@+id/ll_about_us"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:padding="6dp">
+
+
+                    <com.honeybunch.app.utils.CustomTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.6"
+                        android:drawableLeft="@drawable/ic_baseline_assignment_late_24"
+                        android:drawablePadding="8dp"
+                        android:drawableTint="@color/custom_theme_color"
+                        android:text="About Us"
+                        android:textColor="@color/black"
+                        app:font_name="HNRegular" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".4"
+                        android:src="@drawable/ic_baseline_chevron_right_24"
+                        android:text="23%"
+                        app:tint="#cecece" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.3dp"
+                    android:background="@color/view_bg" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

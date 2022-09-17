@@ -1,0 +1,981 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.CompleteProfileActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent">
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/profileAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/profileToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                app:titleTextColor="@color/white"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+
+                    <ImageView
+                        android:id="@+id/backbtn_iv"
+                        android:layout_width="25dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/ic_baseline_arrow_back_24"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toEndOf="@id/backbtn_iv"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:text="@string/profile"
+                        android:textColor="@color/custom_theme_color"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+        <RelativeLayout
+            android:id="@+id/rl_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileAppBar"
+            >
+            <ImageView
+                android:id="@+id/profile_image"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/photo_user" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/bottom_to_top" />
+
+            <ImageView
+                android:id="@+id/image_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:padding="30dp"
+                android:src="@drawable/ic_round_edit_24"
+                android:contentDescription="@string/profile_image" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rl_main">
+
+            <com.honeybunch.app.utils.CustomTextView
+                android:id="@+id/tv_add_photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/custom_bg"
+                app:font_name="HNBold"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="Add photo"
+                android:textColor="@color/white" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.honeybunch.app.utils.CustomTextView
+                    android:id="@+id/uer_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="user Name, 30"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_profile_text"
+                    app:font_name="HNBold" />
+
+                <com.honeybunch.app.utils.CustomTextView
+                    android:id="@+id/tv_edit_user_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="Edit"
+                    android:textAllCaps="true"
+                    android:textColor="@color/custom_theme_color"
+                    android:textStyle="bold" />
+
+                <com.honeybunch.app.utils.CustomTextView
+                    android:id="@+id/subaddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/uer_name"
+                    android:text="New Delhi, India" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_hiden_form"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/subaddress"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone">
+
+                    <com.honeybunch.app.utils.CustomTextView
+                        android:id="@+id/tv_lable_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Name"
+                        android:textColor="@color/black" />
+
+                    <EditText
+                        android:id="@+id/et_user_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_lable_name"
+                        android:background="@drawable/custom_edit_bg"
+                        android:hint="Enter Your Name"
+                        android:maxLength="20"
+                        android:maxLines="1"
+                        android:padding="8dp"
+                        android:singleLine="true"
+                        android:textSize="15sp" />
+
+                    <com.honeybunch.app.utils.CustomTextView
+                        android:id="@+id/tv_lable_birthday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/et_user_name"
+                        android:layout_marginTop="10dp"
+                        android:text="Birthday"
+                        android:textColor="@color/black" />
+
+                    <EditText
+                        android:id="@+id/et_uer_dob"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_lable_birthday"
+                        android:background="@drawable/custom_edit_bg"
+                        android:clickable="true"
+                        android:focusable="false"
+                        android:hint="Select your date of birth"
+                        android:padding="8dp"
+                        android:singleLine="true"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_gender"
+                        android:orientation="vertical"
+                        android:layout_below="@+id/et_uer_dob"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.honeybunch.app.utils.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="2dp"
+                            android:text="Identify as a"
+                            android:textColor="@color/black"
+                            app:font_name="HNBold" />
+
+                        <RadioGroup
+                            android:id="@+id/gender"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.radiobutton.MaterialRadioButton
+                                android:id="@+id/male"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".59"
+                                android:text="Male"
+                                android:checked="true"
+                                android:textColor="@color/black"
+                                app:buttonTint="@color/custom_theme_color"/>
+
+                            <com.google.android.material.radiobutton.MaterialRadioButton
+                                android:id="@+id/female"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:text="Female"
+                                android:textColor="@color/black"
+                                app:buttonTint="@color/custom_theme_color"/>
+                        </RadioGroup>
+
+                        <TextView
+                            android:id="@+id/genderAlert"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="serif"
+                            android:text="Select Gender"
+                            android:textColor="@color/color_e53f28"
+                            android:textSize="11dp"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+
+                    <com.honeybunch.app.utils.CustomTextView
+                        android:id="@+id/tv_lable_location"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ll_gender"
+                        android:layout_marginTop="10dp"
+                        android:text="Location"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/et_user_location"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_lable_location"
+                        android:background="@drawable/custom_edit_bg"
+                        android:hint="Choose your City"
+                        android:padding="8dp"
+                        android:singleLine="true"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_profession"
+                        android:layout_below="@+id/et_user_location"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.honeybunch.app.utils.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="3dp"
+                            android:text="Occupation"
+                            android:textColor="@color/black"
+                            app:font_name="HNBold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/custom_round_bg"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/ic_mortarboard" />
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingLeft="8dp"
+                                        android:text="Education" />
+
+                                    <Spinner
+                                        android:id="@+id/spin_education"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/custom_round_bg"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/ic_suitcase" />
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingLeft="8dp"
+                                        android:text="Profession" />
+
+                                    <Spinner
+                                        android:id="@+id/spinner_profession"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ll_profession"
+                        android:gravity="center"
+                        android:padding="10dp">
+
+                        <com.honeybunch.app.utils.CustomTextView
+                            android:id="@+id/bt_save_user"
+                            android:layout_width="@dimen/btn_common_width"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/custom_bg"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Save"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:visibility="visible" />
+
+                        <com.honeybunch.app.utils.CustomTextView
+                            android:id="@+id/bt_user_cancel"
+                            android:layout_width="@dimen/btn_common_width"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@+id/bt_save_user"
+                            android:background="@drawable/custom_wtout_bg"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Cancel"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:layout_below="@+id/rl_hiden_form"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#cecece" />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.honeybunch.app.utils.CustomTextView
+                    android:id="@+id/tv_purpose_dating"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="The Purposes of Dating"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_profile_text"
+                    app:font_name="HNBold" />
+
+                <com.honeybunch.app.utils.CustomTextView
+                    android:id="@+id/tv_edit_purpose_dating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="Edit"
+                    android:textAllCaps="true"
+                    android:textColor="@color/custom_theme_color"
+                    android:textStyle="bold" />
+
+                <com.honeybunch.app.utils.CustomTextView
+                    android:id="@+id/tv_purposedate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_purpose_dating"
+                    android:text="Chat, New Friend" />
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_dating_hiden"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_purposedate"
+                    android:visibility="gone">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recylerview_multiple"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.3dp"
+                        android:layout_below="@+id/recylerview_multiple"
+                        android:background="@color/view_bg" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/recylerview_multiple"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center">
+
+                        <com.honeybunch.app.utils.CustomTextView
+                            android:id="@+id/bt_save_date"
+                            android:layout_width="@dimen/btn_common_width"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/custom_bg"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Save"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:visibility="visible" />
+
+                        <com.honeybunch.app.utils.CustomTextView
+                            android:id="@+id/bt_date_cancel"
+                            android:layout_width="@dimen/btn_common_width"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@+id/bt_save_date"
+                            android:background="@drawable/custom_wtout_bg"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Cancel"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black" />
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:layout_below="@+id/rl_dating_hiden"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#cecece" />
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible">
+
+                <com.honeybunch.app.utils.CustomTextView
+                    android:id="@+id/tv_apearance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Apprearance"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_profile_text"
+                    app:font_name="HNBold" />
+
+                <com.honeybunch.app.utils.CustomTextView
+                    android:id="@+id/tv_edit_apperance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="Edit"
+                    android:textAllCaps="true"
+                    android:textColor="@color/custom_theme_color"
+                    android:textStyle="bold" />
+
+                <com.honeybunch.app.utils.CustomTextView
+                    android:id="@+id/tell_apreance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_apearance"
+                    android:text="Tell us how do you look" />
+
+                <RelativeLayout
+                    android:layout_below="@+id/tell_apreance"
+                    android:id="@+id/rl_hidden_apr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:id="@+id/ll_apr"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/custom_round_bg"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/ic_baseline_color_lens_24" />
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingLeft="8dp"
+                                        android:text="Hair color" />
+
+                                    <Spinner
+                                        android:id="@+id/spinner_haircolor"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/custom_round_bg"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/ic_baseline_monitor_weight_24" />
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingLeft="8dp"
+                                        android:text="weight" />
+
+                                    <Spinner
+                                        android:id="@+id/spinner_weight"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/custom_round_bg"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/ic_baseline_height_24" />
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingLeft="8dp"
+                                        android:text="Height" />
+
+                                    <Spinner
+                                        android:id="@+id/spinner_height"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/custom_round_bg"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/ic_baseline_remove_red_eye_24" />
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingLeft="8dp"
+                                        android:text="Eye color" />
+
+                                    <Spinner
+                                        android:id="@+id/spinner_eyecolor"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ll_apr"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:visibility="visible">
+
+                        <com.honeybunch.app.utils.CustomTextView
+                            android:id="@+id/bt_save_aprear"
+                            android:layout_width="@dimen/btn_common_width"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/custom_bg"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Save"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:visibility="visible" />
+
+                        <com.honeybunch.app.utils.CustomTextView
+                            android:id="@+id/bt_cencel"
+                            android:layout_width="@dimen/btn_common_width"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@+id/bt_save_aprear"
+                            android:background="@drawable/custom_wtout_bg"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Cancel"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:layout_below="@+id/rl_hidden_apr"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#cecece" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.honeybunch.app.utils.CustomTextView
+                    android:id="@+id/tv_interest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Interests"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_profile_text"
+                    app:font_name="HNBold" />
+
+                <com.honeybunch.app.utils.CustomTextView
+                    android:id="@+id/tv_edit_interset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="Edit"
+                    android:textAllCaps="true"
+                    android:textColor="@color/custom_theme_color"
+                    android:textStyle="bold" />
+
+                <com.honeybunch.app.utils.CustomTextView
+                    android:text="choose your interest"
+                    android:id="@+id/tv_interest_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_interest" />
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_chip_save"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_interest_value"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:visibility="gone">
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyler_chip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_save_interest_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/recyler_chip">
+
+                        <com.honeybunch.app.utils.CustomTextView
+                            android:id="@+id/bt_save_chip"
+                            android:layout_width="@dimen/btn_common_width"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/custom_bg"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Save"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:visibility="visible" />
+
+                        <com.honeybunch.app.utils.CustomTextView
+                            android:id="@+id/bt_chip_cancel"
+                            android:layout_width="@dimen/btn_common_width"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@+id/bt_save_chip"
+                            android:background="@drawable/custom_wtout_bg"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Cancel"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black" />
+
+                    </RelativeLayout>
+
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:layout_below="@+id/tv_interest_value"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#cecece" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.honeybunch.app.utils.CustomTextView
+                    android:id="@+id/tv_about_me"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="About Me"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_profile_text"
+                    app:font_name="HNBold" />
+
+                <com.honeybunch.app.utils.CustomTextView
+                    android:id="@+id/tv_edit_aboutus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="Edit"
+                    android:textAllCaps="true"
+                    android:textColor="@color/custom_theme_color"
+                    android:textStyle="bold" />
+
+                <com.honeybunch.app.utils.CustomTextView
+                    android:id="@+id/tell_us"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_about_me"
+                    android:text="Tell us about yourself" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_hiden_tellus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tell_us"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/et_aboutme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/custom_edit_bg"
+                        android:gravity="top|left"
+                        android:inputType="textMultiLine"
+                        android:lines="4"
+                        android:maxLines="5"
+                        android:minLines="5"
+                        android:padding="4dp"
+                        android:scrollbars="vertical" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/et_aboutme"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center">
+
+                        <com.honeybunch.app.utils.CustomTextView
+                            android:id="@+id/bt_save_about"
+                            android:layout_width="@dimen/btn_common_width"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/custom_bg"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Save"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:visibility="visible" />
+
+                        <com.honeybunch.app.utils.CustomTextView
+                            android:id="@+id/bt_cencel_about"
+                            android:layout_width="@dimen/btn_common_width"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@+id/bt_save_about"
+                            android:background="@drawable/custom_wtout_bg"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Cancel"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black" />
+
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:layout_below="@+id/rl_hiden_tellus"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#cecece" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/spin_kit"
+            style="@style/SpinKitView.Large.ThreeBounce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="90dp"
+            android:visibility="visible"
+            app:SpinKit_Color="@color/mixed"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

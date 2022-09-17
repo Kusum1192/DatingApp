@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <com.honeybunch.app.utils.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete Chat"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <com.honeybunch.app.utils.CustomTextView
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Are you sure you want to delete this chat?" />
+
+        <com.honeybunch.app.utils.CustomTextView
+            android:id="@+id/delete_chat"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:padding="12dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_bg"
+            android:text="Delete" />
+
+        <com.honeybunch.app.utils.CustomTextView
+            android:id="@+id/cancel_delete_chat"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/custom_theme_color"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:padding="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_wtout_bg"
+            android:text="Cancel" />
+    </LinearLayout>
+
+</LinearLayout>

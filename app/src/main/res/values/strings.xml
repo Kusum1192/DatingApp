@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">Honey Bunch</string>
+    <string name="title_home">Home</string>
+    <string name="title_search">Discover</string>
+    <string name="title_message">Messages</string>
+    <string name="title_activity">Activity</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="title_profile">Profile</string>
+    <string name="whycredit">Oh My Love provides <b>dating services</b> to everyone looking for a romantic relationship that lasts\n\n <b>Our services are paid</b>, which allows us to find the most engaged partners for you and filter the uninterested ones\n\n
+                         <p>Credits allow you to <b>unlock any conversation</b> and give access to the other useful features</p>
+    </string>
+    <string name="textprviacy">By Continuing You Indicate that You have Read and Agree to our Privacy Policy and Terms Of Services. </string>
+    <string name="termofservices"><u>Terms of Services</u></string>
+    <string name="privacypolicy"><u>Privacy Policy</u></string>
+    <string name="loadingwait">Loading Please Wait</string>
+    <string name="systemmessage">System Message </string>
+    <string name="channel_id">channel</string>
+    <string name="default_notification_channel_id">default</string>
+    <string name="app_logo">App Logo</string>
+    <string name="you_deserve_the_best_partner">You deserve the best partner</string>
+    <string name="welcome">Welcome</string>
+    <string name="v1_0">v1.0</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="like_button">LikeButton</string>
+    <string name="offline">Offline</string>
+    <string name="online">online</string>
+    <string name="skip_button">Skip Button</string>
+    <string name="reload_button">Reload Button</string>
+    <string name="string_like_button">Like Button</string>
+    <string name="literature">Literature</string>
+    <string name="extreme">Extreme</string>
+    <string name="cancel_button">Cancel Button</string>
+    <string name="more">more</string>
+    <string name="buy_credits">Buy Credits</string>
+    <string name="profile">Complete Profile</string>
+    <string name="profile_image">Profile Image</string>
+    <string name="account_info">Account Info</string>
+    <string name="blocked_list">Blocked List</string>
+    <string name="block_list">Block List</string>
+    <string name="view_pager">View Pager</string>
+    <string name="_1">1</string>
+    <string name="view_profile_image">View Profile Image</string>
+    <string name="you_are_blocked">You are blocked!</string>
+    <string name="signin_with_google">SignIn With google</string>
+    <string name="default_web_client_id2">369787717092-hhl7a2qp614qedgld4e5pe7c7tdtj5n1.apps.googleusercontent.com</string>
+    <string name="suggestion">Everyone has weaknesses, but I’m not everyone.</string>
+    <string name="please_tell_us_your_reason">Please tell us your reason!</string>
+
+</resources>

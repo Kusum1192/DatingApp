@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.honeybunch.app.utils.CustomTextView
+        android:gravity="center"
+        android:id="@+id/tv_popular"
+        android:visibility="gone"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/custom_popular_bg"
+        android:padding="3dp"
+        android:text="Popular"
+        android:textColor="@color/white" />
+
+    <RelativeLayout
+        android:id="@+id/rl_border"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:padding="12dp">
+
+        <com.honeybunch.app.utils.CustomTextView
+            android:id="@+id/tv_count_credit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="100 credits"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <com.honeybunch.app.utils.CustomTextView
+            android:id="@+id/tv_total_credit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="4.4"
+            android:textColor="#5F707E"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <com.honeybunch.app.utils.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_total_credit"
+            android:layout_alignParentRight="true"
+            android:text="per credit"
+            android:textColor="#5F707E"
+            android:textSize="10sp" />
+
+        <com.honeybunch.app.utils.CustomTextView
+            android:id="@+id/tv_msgchat_credit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_count_credit"
+            android:text="10 chats"
+            android:textColor="#5F707E"
+            android:textSize="10sp" />
+
+        <com.honeybunch.app.utils.CustomTextView
+            android:id="@+id/tv_chat_credit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_count_credit"
+            android:layout_marginLeft="4dp"
+            android:layout_toRightOf="@+id/tv_msgchat_credit"
+            android:text="599"
+            android:textSize="10sp" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

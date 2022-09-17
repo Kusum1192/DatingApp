@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="people">
+        <item>Hair Color</item>
+        <item>Height</item>
+        <item>Weight</item>
+        <item>Eyes Color</item>
+        <item>Appreance</item>
+        <item>Body Type</item>
+    </string-array>
+
+    <integer-array name="images">
+        <item>@mipmap/ic_launcher</item>
+        <item>@mipmap/ic_launcher</item>
+        <item>@mipmap/ic_launcher</item>
+        <item>@mipmap/ic_launcher</item>
+        <item>@mipmap/ic_launcher</item>
+        <item>@mipmap/ic_launcher</item>
+
+    </integer-array>
+</resources>

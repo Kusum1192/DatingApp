@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ViewedMeProfileActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+
+        <LinearLayout
+            android:id="@+id/ll_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/view_pager" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabDots"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@color/transparent"
+                    android:contentDescription="@string/cancel_button"
+                    android:visibility="visible"
+                    app:tabBackground="@drawable/tab_indicator_color"
+                    app:tabIndicatorFullWidth="false"
+                    app:tabIndicatorHeight="0dp"
+                    app:tabMode="fixed"
+                    app:tabPaddingEnd="0dp"
+                    app:tabPaddingStart="0dp" />
+
+                <androidx.appcompat.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_alignParentTop="true"
+                    android:background="@android:color/transparent"
+                    android:minHeight="?attr/actionBarSize">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/im_cross"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:contentDescription="@string/cancel_button"
+                            android:src="@drawable/ic_baseline_cancel_24" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true">
+
+                            <com.honeybunch.app.utils.CustomTextView
+                                android:id="@+id/active"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/custom_bg_gray"
+                                android:drawableStart="@drawable/active_status"
+                                android:drawablePadding="2dp"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="4dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="4dp"
+                                android:text="@string/online"
+                                android:textAllCaps="true"
+                                android:textColor="@color/white"
+                                android:textSize="12sp"
+                                android:visibility="gone"
+                                app:font_name="HNLight" />
+
+                            <com.honeybunch.app.utils.CustomTextView
+                                android:id="@+id/inactive"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/custom_bg_gray"
+                                android:drawableStart="@drawable/inactive_status"
+                                android:drawablePadding="2dp"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="4dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="4dp"
+                                android:text="@string/offline"
+                                android:textAllCaps="true"
+                                android:textColor="@color/white"
+                                android:textSize="12sp"
+                                android:visibility="gone"
+                                app:font_name="HNLight" />
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                </androidx.appcompat.widget.Toolbar>
+
+            </RelativeLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="-20dp"
+                android:background="@drawable/custom_uper_rounded_corner"
+                android:padding="12dp">
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:visibility="gone"
+                    >
+
+                    <com.honeybunch.app.utils.CustomTextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Name"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/tv_profile_text"
+                        app:font_name="HNBold"
+                        tools:ignore="RelativeOverlap" />
+
+                    <com.honeybunch.app.utils.CustomTextView
+                        android:id="@+id/tv_city"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_name"
+                        android:text="Place"
+                        app:font_name="HNLight" />
+
+                    <ImageView
+                        android:id="@+id/img_more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_baseline_more_horiz_24"
+                        android:contentDescription="@string/more" />
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/view_bg"
+                    app:layout_constraintStart_toStartOf="@+id/rl_profile"
+                    app:layout_constraintTop_toBottomOf="@+id/rl_profile" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintStart_toStartOf="@+id/view1"
+                    app:layout_constraintTop_toBottomOf="@+id/view1">
+
+
+                    <com.honeybunch.app.utils.CustomTextView
+                        android:id="@+id/tv_public_photo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Public Photos"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:font_name="HNBold" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_all_photo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_public_photo">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recylerview_profile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:scrollbars="none"
+                            app:reverseLayout="true"
+                            tools:itemCount="4" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="220dp"
+                                    app:cardCornerRadius="6dp"
+                                    app:cardElevation="2dp"
+                                    app:cardMaxElevation="2dp"
+                                    app:cardUseCompatPadding="true">
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/photo_user" />
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <androidx.cardview.widget.CardView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="110dp"
+                                        app:cardCornerRadius="6dp"
+                                        app:cardElevation="2dp"
+                                        app:cardMaxElevation="2dp"
+                                        app:cardUseCompatPadding="true">
+
+                                        <ImageView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/photo_user" />
+
+                                    </androidx.cardview.widget.CardView>
+
+                                    <androidx.cardview.widget.CardView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="110dp"
+                                        app:cardCornerRadius="6dp"
+                                        app:cardElevation="2dp"
+                                        app:cardMaxElevation="2dp"
+                                        app:cardUseCompatPadding="true">
+
+                                        <ImageView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/photo_user" />
+
+                                    </androidx.cardview.widget.CardView>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                    <com.honeybunch.app.utils.CustomTextView
+                        android:id="@+id/tv_all_photo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rl_all_photo"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/custom_wtout_bg"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:text="Show All Photos"
+                        android:textAllCaps="true"
+                        android:textColor="@color/custom_theme_color"
+                        app:font_name="HNBold" />
+
+                    <View
+                        android:id="@+id/view_dating1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.2dp"
+                        android:layout_below="@+id/tv_all_photo"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/view_bg" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_dating"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_dating1">
+
+                        <com.honeybunch.app.utils.CustomTextView
+                            android:id="@+id/tv_purpose_dating"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="The Purposes of Dating"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/tv_profile_text"
+                            app:font_name="HNBold" />
+
+                        <com.honeybunch.app.utils.CustomTextView
+                            android:id="@+id/purpose_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_purpose_dating"
+                            android:text=""
+                            app:font_name="HNLight" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.2dp"
+                            android:layout_below="@+id/purpose_date"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@color/view_bg" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_about"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rl_dating">
+
+                        <com.honeybunch.app.utils.CustomTextView
+                            android:id="@+id/tv_about_me"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="About Me"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/tv_profile_text"
+                            app:font_name="HNBold" />
+
+
+                        <com.honeybunch.app.utils.CustomTextView
+                            android:id="@+id/tell_us"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_about_me"
+                            android:text=""
+                            app:font_name="HNLight" />
+
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.2dp"
+                            android:layout_below="@+id/tell_us"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@color/view_bg" />
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rl_about"
+                        android:layout_marginBottom="30dp">
+
+                        <com.honeybunch.app.utils.CustomTextView
+                            android:id="@+id/tv_interest1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Interests"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/tv_profile_text"
+                            app:font_name="HNBold" />
+
+                        <com.honeybunch.app.utils.CustomTextView
+                            android:id="@+id/tv_interest"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/tv_interest1"
+                            android:layout_marginBottom="10dp"
+                            app:font_name="HNLight" />
+
+                        <com.google.android.material.chip.ChipGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_interest"
+                            android:visibility="gone">
+
+                            <com.google.android.material.chip.Chip
+                                style="@style/Widget.MaterialComponents.Chip.Filter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/literature" />
+
+                            <com.google.android.material.chip.Chip
+                                style="@style/Widget.MaterialComponents.Chip.Filter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/extreme" />
+
+                            <com.google.android.material.chip.Chip
+                                style="@style/Widget.MaterialComponents.Chip.Filter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Cinema" />
+
+                            <com.google.android.material.chip.Chip
+                                style="@style/Widget.MaterialComponents.Chip.Filter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Travel" />
+
+
+                            <com.google.android.material.chip.Chip
+                                style="@style/Widget.MaterialComponents.Chip.Filter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Shopping" />
+
+                            <com.google.android.material.chip.Chip
+                                style="@style/Widget.MaterialComponents.Chip.Filter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Finance and Investments" />
+
+
+                        </com.google.android.material.chip.ChipGroup>
+
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/spin_kit"
+        style="@style/SpinKitView.Large.ThreeBounce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:visibility="visible"
+        app:SpinKit_Color="@color/mixed"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    <include-->
+    <!--        layout="@layout/bottom_sheet"-->
+    <!--        android:visibility="gone" />-->
+
+    <!--    <com.romeolab.app.ui.utils.CustomTextView-->
+    <!--        android:id="@+id/tv_message"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_gravity="bottom"-->
+    <!--        android:layout_marginLeft="10dp"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:layout_marginRight="10dp"-->
+    <!--        android:layout_marginBottom="5dp"-->
+    <!--        android:background="@drawable/custom_bg"-->
+    <!--        android:gravity="center"-->
+    <!--        android:padding="10dp"-->
+    <!--        android:text="Accept"-->
+    <!--        android:textAllCaps="true"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        android:visibility="gone"-->
+    <!--        app:font_name="HNBold" />-->
+
+</RelativeLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/acme</item>
+        <item>@font/allerta</item>
+        <item>@font/amaranth</item>
+        <item>@font/amiko</item>
+        <item>@font/asset</item>
+        <item>@font/asul</item>
+        <item>@font/basic</item>
+        <item>@font/bungee_shade</item>
+        <item>@font/cantata_one</item>
+        <item>@font/diplomata</item>
+        <item>@font/habibi</item>
+        <item>@font/orienta</item>
+    </array>
+</resources>

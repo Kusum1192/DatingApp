@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomTextView">
+        <attr name="font_name">
+            <enum name="HNBold" value="1" />
+            <enum name="HNLight" value="2" />
+            <enum name="HNRegular" value="3" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="SwipeAnimationButton">
+        <attr name="background" />
+        <attr name="defaultDrawable" format="integer" />
+        <attr name="defaultBackground" format="integer" />
+        <attr name="rightSwipeDrawable" format="integer" />
+        <attr name="rightSwipeBackground" format="integer" />
+        <attr name="leftSwipeDrawable" format="integer" />
+        <attr name="leftSwipeBackground" format="integer" />
+        <attr name="duration" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="FullscreenAttrs">
+        <attr name="fullscreenBackgroundColor" format="color" />
+        <attr name="fullscreenTextColor" format="color" />
+    </declare-styleable>
+</resources>
