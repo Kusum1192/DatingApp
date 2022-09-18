@@ -3,6 +3,7 @@ package com.honeybunch.app.activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -25,12 +26,7 @@ public class AccountActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_account);
         toolbar = findViewById(R.id.accountToolbar);
         backBtn=findViewById(R.id.backbtn_iv);
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
+        backBtn.setOnClickListener(v -> onBackPressed());
 
 
      /*   getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -49,13 +45,11 @@ public class AccountActivity extends AppCompatActivity implements View.OnClickLi
         ll_block_list = findViewById(R.id.ll_block_list);
       //  ll_refused_list = findViewById(R.id.ll_refused_list);
         ll_skip_list = findViewById(R.id.ll_skip_list);
-
         ll_block_list.setOnClickListener(this);
        // ll_refused_list.setOnClickListener(this);
         ll_skip_list.setOnClickListener(this);
-
     }
-
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -74,8 +68,6 @@ public class AccountActivity extends AppCompatActivity implements View.OnClickLi
                 startActivity(intentgetSkip);
                 break;
             default:
-
-
         }
     }
     public boolean onSupportNavigateUp() {
